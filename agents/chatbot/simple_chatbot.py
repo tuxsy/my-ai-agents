@@ -3,6 +3,9 @@ Simple Chatbot Agent
 A basic conversational AI agent that can respond to user inputs.
 """
 
+import random
+
+
 class SimpleChatbot:
     """A simple rule-based chatbot agent."""
     
@@ -29,7 +32,6 @@ class SimpleChatbot:
         
         for key, responses in self.responses.items():
             if key in user_input_lower:
-                import random
                 return random.choice(responses)
         
         # Default response

@@ -3,8 +3,9 @@ Data Analysis Agent
 An agent that analyzes datasets and provides insights.
 """
 
-from typing import List, Dict, Any, Optional
+import json
 import statistics
+from typing import List, Dict, Any, Optional
 
 
 class DataAnalysisAgent:
@@ -159,7 +160,6 @@ def main():
     
     # Analyze sales data
     print("Sales Analysis:")
-    import json
     analysis = agent.analyze("sales")
     print(json.dumps(analysis, indent=2))
     print()

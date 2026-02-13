@@ -3,6 +3,7 @@ Task Automation Agent
 An agent that can schedule and execute automated tasks.
 """
 
+import json
 import time
 from datetime import datetime, timedelta
 from typing import Callable, List, Dict, Any
@@ -143,7 +144,6 @@ def main():
     
     # Print final status
     print("\nFinal Status:")
-    import json
     print(json.dumps(agent.get_status(), indent=2))
 
 

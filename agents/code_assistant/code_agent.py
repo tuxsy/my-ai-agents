@@ -3,6 +3,7 @@ Code Assistant Agent
 An agent that helps with code analysis and suggestions.
 """
 
+import json
 import re
 from typing import List, Dict, Any, Optional
 
@@ -206,7 +207,6 @@ if __name__ == "__main__":
     
     # Line count
     print("Line Count:")
-    import json
     line_count = agent.count_lines("calculator")
     print(json.dumps(line_count, indent=2))
     print()
