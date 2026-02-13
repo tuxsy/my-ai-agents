@@ -13,4 +13,4 @@ El README debe incluir las siguientes secciones:
 5. **Uso** - Cómo ejecutar el agente
 6. **Nota para desarrolladores** - Explicar que se usa pigar para mantener requirements.txt y cómo usarlo
 
-Mantén el README conciso y en español. No uses emojis.
+Mantén el README conciso y en español. No uses emojis. Cambia el README sólo si hay información nueva o desactualizada, no hagas cambios innecesarios.

@@ -1,25 +1,19 @@
 # Simple Agent
 
-Un chatbot de línea de comandos simple pero con actitud. Este agente usa la API de Groq para responder tus preguntas de manera útil... aunque un poco maleducada.
-
-## Qué hace
-
-Es un asistente conversacional que:
-- Responde preguntas y ayuda con tareas
-- Tiene una personalidad "maleducada" (es útil pero gruñón)
-- Funciona en la terminal con una interfaz simple
+Un chatbot de linea de comandos simple pero con actitud. Este agente usa la API de Groq para responder preguntas de manera util pero con personalidad "maleducada".
 
 ## Requisitos
 
-- **Python 3.9+**
+- Python 3.9 o superior
 
-## Tecnologías
+## Tecnologias
 
 - **Python** - Lenguaje principal
-- **Groq API** - Para inferencia rápida de LLMs
-- **Qwen3-32B** - El modelo de lenguaje utilizado
+- **Groq API** - Inferencia rapida de LLMs
+- **Qwen3-32B** - Modelo de lenguaje utilizado
+- **python-dotenv** - Gestion de variables de entorno
 
-## Instalación
+## Instalacion
 
 1. Instala las dependencias:
    ```bash
@@ -37,9 +31,7 @@ Es un asistente conversacional que:
 python agent.py
 ```
 
-Escribe tus mensajes y recibe respuestas (algo groseras pero útiles). Para salir, escribe `exit`, `quit` o `salir`.
-
----
+Escribe tus mensajes y recibe respuestas. Para salir, escribe `exit`, `quit` o `salir`.
 
 ## Nota para desarrolladores
 
@@ -53,20 +45,10 @@ pip install pigar
 
 ### Actualizar requirements.txt
 
-Cuando añadas o elimines dependencias en el código, ejecuta:
+Cuando modifiques las dependencias en el codigo, ejecuta:
 
 ```bash
 pigar generate
 ```
 
-Esto analizará los imports del proyecto y actualizará `requirements.txt` automáticamente con las versiones correctas.
-
-### Actualizar README
-
-Este proyecto incluye un comando de OpenCode para mantener el README actualizado. Desde OpenCode, ejecuta:
-
-```
-/update-readme
-```
-
-El comando analizará el proyecto y regenerará el README con la estructura y contenido actualizados.
+Esto analiza los imports del proyecto y actualiza `requirements.txt` con las versiones correctas.
