@@ -1,6 +1,6 @@
 # Simple Agent
 
-Un chatbot de linea de comandos simple pero con actitud. Este agente usa la API de Groq para responder preguntas de manera util pero con personalidad "maleducada".
+Un chatbot de linea de comandos simple que usa la API de Groq para responder preguntas. Incluye un sistema de memoria para mantener el contexto de la conversacion.
 
 ## Requisitos
 
@@ -10,7 +10,7 @@ Un chatbot de linea de comandos simple pero con actitud. Este agente usa la API 
 
 - **Python** - Lenguaje principal
 - **Groq API** - Inferencia rapida de LLMs
-- **Qwen3-32B** - Modelo de lenguaje utilizado
+- **qwen/qwen3-32b** - Modelo de lenguaje utilizado
 - **python-dotenv** - Gestion de variables de entorno
 
 ## Instalacion
