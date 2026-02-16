@@ -35,17 +35,29 @@ class Tools:
         # Generar servicio de Google Calendar
         return build("calendar", "v3", credentials=creds)
 
-    def check_availability(self):
-        pass
+    def check_availability(self, time_start: str, time_end: str, calendar: str = "primary"):
+        print(f"Llamada a herramientea check_availability con time_start={time_start} y time_end={time_end}")
+        body = {
+            "timeMin": time_start,
+            "timeMax": time_end,
+            "items": [{"id": calendar}]
+        }
+        service = self.get_calendar_services()
+        events_result = service.freebusy().query(body=body).execute()
+        busy_times = events_result.get("calendars", {}).get(calendar, {}).get("busy", [])
+        return {
+            "calendar_id": calendar,
+            "time_start": time_start,
+            "time_end": time_end,
+            "busy_times": busy_times,
+            "available": len(busy_times) == 0
+        }
 
 
 if __name__ == "__main__":
     from dotenv import load_dotenv
     load_dotenv()
-    
-    credentials_path = os.getenv("GOOGLE_CREDENTIALS_PATH")
-    if not credentials_path:
-        raise ValueError("La variable de entorno GOOGLE_CREDENTIALS_PATH no está configurada")
-    tools = Tools(credentials_path=credentials_path)
-    calendar_service = tools.get_calendar_services()
-    print("Google Calendar API autenticada correctamente")
+
+    tools = Tools(credentials_path=os.getenv("GOOGLE_CREDENTIALS_PATH"))
+    result = tools.check_availability("2026-02-16T17:00:00+01:00", "2026-02-16T17:30:00+01:00")
+    print(result)

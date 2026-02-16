@@ -11,7 +11,7 @@ Un chatbot de linea de comandos simple que usa la API de Groq para responder pre
 - **Python** - Lenguaje principal
 - **Groq API** - Inferencia rapida de LLMs
 - **qwen/qwen3-32b** - Modelo de lenguaje utilizado
-- **Google Calendar API** - Integracion con calendario (en desarrollo)
+- **Google Calendar API** - Integracion con calendario
 - **python-dotenv** - Gestion de variables de entorno
 
 ## Instalacion
