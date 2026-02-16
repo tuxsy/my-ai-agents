@@ -14,6 +14,11 @@ api_key = os.getenv("GROQ_API_KEY")
 client = Groq(api_key=api_key)
 memory = SimpleMemory(max_messages=MEMORY_MAX_MESSAGES)
 agent_tools = Tools(credentials_path=os.getenv("GOOGLE_CREDENTIALS_PATH"))
+SYSTEM_PROMPT = (
+    "Eres un asistente personal que habla en español y responde de forma concisa y clara."
+    "Si hay ambiguedad cuando el usuario indica una hora, casi nunca va a ser de madrugada."
+)
+memory.add_system_message(SYSTEM_PROMPT)
 TOOLS = [
     {
         "type": "function",
