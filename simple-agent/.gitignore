@@ -1,0 +1,13 @@
+*
+!.opencode/
+!.opencode/**
+!.vscode/
+!.vscode/**
+!.gitignore
+
+!README.md
+!requirements.txt
+!agent.py
+
+!simple_memory.py
+!tools.py
