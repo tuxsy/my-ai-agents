@@ -1,6 +1,6 @@
 # Simple Agent
 
-Un chatbot de linea de comandos simple que usa la API de Groq para responder preguntas. Incluye un sistema de memoria para mantener el contexto de la conversacion.
+Un chatbot de linea de comandos simple que usa la API de Groq para responder preguntas. Incluye un sistema de memoria para mantener el contexto de la conversacion (hasta 10 mensajes).
 
 ## Requisitos
 
@@ -38,6 +38,15 @@ python agent.py
 ```
 
 Escribe tus mensajes y recibe respuestas. Para salir, escribe `exit`, `quit` o `salir`.
+
+## Herramientas
+
+El agente tiene acceso a las siguientes herramientas que puede invocar automaticamente segun el contexto de la conversacion:
+
+- **get_current_datetime** - Obtiene la fecha y hora actual. Util para preguntas relacionadas con el tiempo o para programar eventos.
+- **check_availability** - Verifica la disponibilidad en Google Calendar para un rango de fechas. Usa la zona horaria `Europe/Madrid` por defecto.
+
+El token de autenticacion de Google se almacena en el directorio `.temp/`.
 
 ## Nota para desarrolladores
 
