@@ -1,6 +1,6 @@
 # Simple Agent
 
-Un chatbot de linea de comandos simple que usa la API de Groq para responder preguntas. Incluye un sistema de memoria para mantener el contexto de la conversacion (hasta 10 mensajes).
+Un chatbot de linea de comandos simple que usa la API de Groq para responder preguntas. Incluye un sistema de memoria para mantener el contexto de la conversacion (hasta 100 mensajes).
 
 ## Requisitos
 
@@ -45,6 +45,7 @@ El agente tiene acceso a las siguientes herramientas que puede invocar automatic
 
 - **get_current_datetime** - Obtiene la fecha y hora actual. Util para preguntas relacionadas con el tiempo o para programar eventos.
 - **check_availability** - Verifica la disponibilidad en Google Calendar para un rango de fechas. Usa la zona horaria `Europe/Madrid` por defecto.
+- **create_event** - Crea eventos en Google Calendar. Requiere confirmacion explicita del usuario antes de crear la reunion.
 
 El token de autenticacion de Google se almacena en el directorio `.temp/`.
 
@@ -70,4 +71,4 @@ Esto analiza los imports del proyecto y actualiza `requirements.txt` con las ver
 
 ---
 
-Modificado por Gemini 3 Pro (con razonamiento)
+Modificado por Claude Opus 4.5 (sin razonamiento)

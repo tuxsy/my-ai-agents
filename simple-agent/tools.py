@@ -67,6 +67,33 @@ class Tools:
             "available": len(busy_times) == 0
         }
 
+    def create_event(self, summary: str, time_start: str, time_end: str, description: str = "", calendar: str = "primary", timezone: str = "Europe/Madrid"):
+        time_start = add_zoneinfo(time_start, timezone)
+        time_end = add_zoneinfo(time_end, timezone)
+
+        event = {
+            "summary": summary,
+            "description": description,
+            "start": {
+                "dateTime": time_start,
+            },
+            "end": {
+                "dateTime": time_end,
+            }
+        }
+
+        service = self.get_calendar_services()
+        created_event = service.events().insert(
+            calendarId=calendar, body=event).execute()
+
+        return {
+            "calendar_id": calendar,
+            "event_id": created_event.get("id"),
+            "summary": created_event.get("summary"),
+            "description": created_event.get("description"),
+            "time_start": created_event.get("start", {}),
+            "time_end": created_event.get("end", {}),
+        }
 
 
 # Utility functions
