@@ -4,7 +4,7 @@ Un chatbot de linea de comandos simple que usa la API de Groq para responder pre
 
 ## Requisitos
 
-- Python 3.9 o superior
+- Python 3.9 o superior (requerido por el modulo `zoneinfo`)
 
 ## Tecnologias
 
@@ -26,7 +26,7 @@ Un chatbot de linea de comandos simple que usa la API de Groq para responder pre
    GROQ_API_KEY=tu_api_key_aqui
    ```
 
-3. (Opcional) Para usar la integracion con Google Calendar, agrega la ruta a tus credenciales:
+3. Para usar la integracion con Google Calendar, agrega la ruta a tus credenciales (requerido actualmente):
    ```
    GOOGLE_CREDENTIALS_PATH=ruta/a/credentials.json
    ```
@@ -67,3 +67,7 @@ pigar generate
 ```
 
 Esto analiza los imports del proyecto y actualiza `requirements.txt` con las versiones correctas.
+
+---
+
+Modificado por Gemini 3 Pro (con razonamiento)
