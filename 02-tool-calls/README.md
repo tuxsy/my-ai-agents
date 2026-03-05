@@ -1,50 +1,50 @@
-# Agente con Llamada a Herramientas (Tool Calls)
+# Agente de Clima con Memoria
 
-Este proyecto implementa un agente de inteligencia artificial capaz de interactuar con el calendario de Google mediante el uso de herramientas (tool calls). El agente puede verificar disponibilidad y crear eventos en el calendario basándose en las peticiones del usuario en lenguaje natural.
+Este proyecto es un agente de IA que utiliza la API de Groq para interactuar con los usuarios en español. El agente puede responder preguntas sobre el clima de cualquier ciudad (con datos simulados) y mantiene un historial reciente de la conversación para ofrecer respuestas contextuales.
 
 ## Requisitos
 
-- Python 3.9 o superior (requerido para el módulo `zoneinfo`)
-- Una cuenta de Google con la API de Google Calendar habilitada
-- Credenciales de Groq API
+- Python 3.9 o superior (determinado por el uso de anotaciones de tipo genéricas como `list[dict]`)
 
 ## Tecnologías
 
 - Python
-- Groq Cloud API (Modelo: qwen/qwen3-32b)
-- Google Calendar API
-- python-dotenv
-- google-api-python-client
-- google-auth-oauthlib
+- Groq Cloud API
+- python-dotenv (gestión de variables de entorno)
 
 ## Instalación
 
-1. Clona el repositorio y navega al directorio del proyecto.
-2. Instala las dependencias necesarias:
+1. Clonar el repositorio.
+2. Crear un entorno virtual:
    ```bash
-   pip install python-dotenv groq google-api-python-client google-auth-oauthlib
+   python -m venv venv
+   source venv/bin/activate  # En Windows: venv\Scripts\activate
    ```
-3. Configura las variables de entorno:
-   - Crea un archivo `.env` y añade tu `GROQ_API_KEY`.
-4. Configura las credenciales de Google:
-   - Descarga tu archivo `credentials.json` desde la consola de Google Cloud y colócalo en la raíz de este directorio.
+3. Instalar las dependencias:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Configurar las variables de entorno:
+   Crear un archivo `.env` en el directorio raíz y añadir su clave de API:
+   ```env
+   GROQ_API_KEY=su_clave_aqui
+   ```
 
 ## Uso
 
-Para ejecutar el agente, utiliza el siguiente comando:
-
+Para iniciar el agente, ejecute el script principal:
 ```bash
 python agent.py
 ```
-
-El agente solicitará autorización a través del navegador la primera vez que se ejecute para generar el archivo `token.json`.
+Escriba "salir" o "exit" para terminar la sesión.
 
 ## Nota para desarrolladores
 
-Se utiliza `pigar` para mantener actualizado el archivo `requirements.txt`. Para generar o actualizar las dependencias, utiliza:
+Este proyecto utiliza `pigar` para generar y mantener actualizado el archivo `requirements.txt` automáticamente basándose en las importaciones del código.
 
+Para actualizar el archivo de dependencias:
 ```bash
 pigar generate
 ```
 
-Modificado por gemini-3-flash-preview (github-copilot)
+Modificado por claude-sonnet-4.6 (sin razonamiento)
