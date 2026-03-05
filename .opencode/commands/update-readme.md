@@ -2,7 +2,9 @@
 description: Actualiza el README del proyecto
 ---
 
-Analiza el proyecto y actualiza el archivo README.md con la información más reciente.
+Analiza el directrorio actual y actualiza el archivo README.md con la información más reciente.
+
+Puedes acceder a este directorio y sus sub-directorios, pero no puedes acceder al directorio padre.
 
 El README debe incluir las siguientes secciones:
 
