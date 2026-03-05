@@ -1,0 +1,7 @@
+*
+!.gitignore
+!agent.py
+!README.md
+!requirements.txt
+!simple_memory.py
+!tools.py
